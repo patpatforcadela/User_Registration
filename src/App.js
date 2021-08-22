@@ -8,13 +8,13 @@ import { RegisterUser } from './RegisterUser'
 function App() {
   return (
     <div>
-      <nav className="navbar bg-light navbar-expand-lg navbar-light">
+      <nav className="navbar bg-dark navbar-expand-lg navbar-dark">
         <ul className="navbar-nav mr-auto">
           <li className="navbar-item">
             <Link to="/" className="nav-link">Users</Link>
           </li>
           <li className="navbar-item">
-            <Link to="/create" className="nav-link">Register User</Link>
+            <Link to="/register" className="nav-link">Register User</Link>
           </li>
         </ul>
       </nav>
