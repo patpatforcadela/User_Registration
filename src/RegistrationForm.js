@@ -92,13 +92,13 @@ export const RegistrationForm = ({ user, onSubmit }) => {
                         render={({ message }) => <p className="error-message">{message}</p>}
                     />
                 </div>
-                <div class="col-md-6">
+                <div className="col-md-6">
                     <label htmlFor="validationCustom04" className="form-label">Sex</label>
-                    <select {...register('sex')} class="form-select" id="validationCustom04" required>
+                    <select {...register('sex')} className="form-select" id="validationCustom04" required>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
                     </select>
-                    <div class="invalid-feedback">
+                    <div className="invalid-feedback">
                         Please select your sex.
                     </div>
                 </div>

@@ -43,6 +43,30 @@ app.get("/:id", (req, res) => {
     })
 })
 
+app.post("/:id", (req, res) => {
+    const id = req.params.id
+    User.findById(id, (err, user) => {
+        if (!user) {
+            res.status(404).send("User not found!")
+        } else {
+            user.firstName = req.body.firstName
+            user.middleName = req.body.middleName
+            user.lastName = req.body.lastName
+            user.address = req.body.address
+            user.email = req.body.email
+            user.number = req.body.number
+            user.birthplace = req.body.birthplace
+            user.sex = req.body.sex
+            user.province = req.body.province
+            user.city = req.body.city
+            user.zip = req.body.zip
+            user.save().then(todo => {
+                res.json(todo)
+            }).catch(err => res.status(500).send(err.message))
+        }
+    })
+})
+
 
 app.listen(PORT, () => {
     console.log("Server is running on port " + PORT)

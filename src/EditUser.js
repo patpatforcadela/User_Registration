@@ -1,30 +1,30 @@
 import React, { useState, useEffect } from 'react'
-import { getUsers } from './api'
+import { getUser, updateUser } from './api'
 import { RegistrationForm } from './RegistrationForm'
 import { useRouteMatch, useHistory } from 'react-router-dom'
 
 export const EditUser = () => {
-    const [users, setUsers] = useState()
+    const [user, setUser] = useState()
     const match = useRouteMatch()
     const history = useHistory()
 
     useEffect(() => {
         const fetchUsers = async () => {
-            const user = await getUsers(match.params.id)
-            setUsers(user)
+            const user = await getUser(match.params.id)
+            setUser(user)
         }
         fetchUsers()
     }, [])
 
-    // const onSubmit = async (data) => {
-    //     await updateUser(data, match.params.id)
-    //     history.push("/")
-    // }
-    return users ? (
+    const onSubmit = async (data) => {
+        await updateUser(data, match.params.id)
+        history.push("/")
+    }
+    return user ? (
         <div className="container">
             <div className="mt-3">
                 <h3>Edit User data</h3>
-                <RegistrationForm user={users} />
+                <RegistrationForm user={user} onSubmit={onSubmit} />
             </div>
         </div>
     ) :
