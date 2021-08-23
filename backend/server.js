@@ -18,11 +18,11 @@ app.use(cors())
 app.use(express.json())
 
 app.get("/", (req, res) => {
-    User.find((err, todos) => {
+    User.find((err, user) => {
         if (err) {
             console.log(err)
         } else {
-            res.json(todos)
+            res.json(user)
         }
     })
 })
@@ -38,8 +38,8 @@ app.post("/register", (req, res) => {
 
 app.get("/:id", (req, res) => {
     const id = req.params.id
-    User.findById(id, (err, todo) => {
-        res.json(todo)
+    User.findById(id, (err, user) => {
+        res.json(user)
     })
 })
 

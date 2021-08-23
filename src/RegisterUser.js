@@ -7,7 +7,8 @@ import './style.css'
 export const RegisterUser = () => {
     const history = useHistory()
     const onSubmit = async (data) => {
-        await registerUser(data)
+        const obj = await registerUser(data)
+        console.log(obj)
         history.push("/")
     }
     return (

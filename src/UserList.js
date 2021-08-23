@@ -21,20 +21,24 @@ export const UserList = () => {
                         <tr >
                             <th>First name</th>
                             <th>Last Name</th>
+                            <th>Sex</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            users.map(user => (
-                                <tr key={user._id}>
-                                    <td>{user.text}</td>
-                                    <td>{user.description}</td>
-                                    <td>
-                                        <Link to={`/edit/${user._id}`} >Edit</Link>
-                                    </td>
-                                </tr>
-                            ))
+                            users.map(user => {
+                                return (
+                                    <tr key={user._id}>
+                                        <td>{user.firstName}</td>
+                                        <td>{user.lastName}</td>
+                                        <td>{user.sex}</td>
+                                        <td>
+                                            <Link to={`/edit/${user._id}`} >Edit</Link>
+                                        </td>
+                                    </tr>
+                                )
+                            })
                         }
                     </tbody>
                 </table>
