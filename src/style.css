@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
 .table td, .table th {
     border: none;
 }
@@ -15,7 +19,7 @@ table.table.table-striped>thead>tr>th{
     color: #343a40;
     width: 70%;
     padding: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 .reg-container{
     display: flex;
@@ -32,4 +36,9 @@ table.table.table-striped>thead>tr>th{
 }
 label{
     font-weight: 600;
+}
+.error-message{
+    color: #b50d00;
+    font-size: 13px;
+    margin-top: 3px;
 }
