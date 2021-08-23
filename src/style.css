@@ -15,6 +15,9 @@ table.table.table-striped>thead>tr{
 table.table.table-striped>thead>tr>th{
     color: white;
 }
+table.table.table-striped {
+    text-align: center;
+}
 .form-container{
     color: #343a40;
     width: 70%;
