@@ -2,6 +2,7 @@ import React from 'react'
 import { RegistrationForm } from './RegistrationForm';
 import { registerUser } from './api'
 import { useHistory } from 'react-router-dom';
+import './style.css'
 
 export const RegisterUser = () => {
     const history = useHistory()
@@ -10,9 +11,11 @@ export const RegisterUser = () => {
         history.push("/")
     }
     return (
-        <div className="container">
-            <div className="mt-3">
-                <h3>Register User</h3>
+        <div className="container reg-container">
+            <div className="mt-4 form-container">
+                <div className="title">
+                    <h4>Register User</h4>
+                </div>
                 <RegistrationForm onSubmit={onSubmit} />
             </div>
         </div>
